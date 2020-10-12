@@ -4,7 +4,7 @@ All notable changes to Docker resources for WSO2 API Microgateway will be docume
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
-## [v3.2.0] - 2020-09-25
+## [v3.2.0] - 2020-10-12
 
 ### Environments
 
