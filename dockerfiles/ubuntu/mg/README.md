@@ -1,6 +1,6 @@
 # Dockerfile for Micro-GW Base Image #
 
-This section defines the step-by-step instructions to build an [Ubuntu](https://hub.docker.com/_/ubuntu/) Linux based Docker image and an [Alpine](https://hub.docker.com/_/alpine/) Linux based Docker image for Micro-GW base image.
+This section defines the step-by-step instructions to build an [Ubuntu](https://hub.docker.com/_/ubuntu/) Linux based Docker image for Micro-GW base image.
 
 ## Prerequisites
 
@@ -8,14 +8,12 @@ This section defines the step-by-step instructions to build an [Ubuntu](https://
 
 ## How to build an image
 
-##### 1. Navigate to mg directory in ubuntu or alpine directories based on the preference.
-##### 2. Build the Docker image using the following command.
+1. Navigate to `/dockerfiles/ubuntu/mg` directory.
+2. Build the Docker image using the following command.
 
-```docker build --no-cache=true -t wso2/wso2micro-gw:3.2.0 .```
+```docker build --no-cache=true -t wso2/wso2micro-gw:3.2.0-ubuntu .```
    
 > By default, the Docker image will prepackage the General Availability (GA) release version of the relevant WSO2 product.
-
-NOTE : Please replace the '${MGW_VERSION}' with the relevant microgateway version. For ex: 3.2.0
 
 ## Docker command usage references
 
