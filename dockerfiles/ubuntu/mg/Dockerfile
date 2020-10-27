@@ -16,7 +16,8 @@
 
 # set base Docker image to AdoptOpenJDK Ubuntu Docker image
 FROM ubuntu:20.04
-LABEL maintainer="dev@wso2.org"
+LABEL maintainer="WSO2 Docker Maintainers <dev@wso2.org>" \
+      com.wso2.docker.source="https://github.com/wso2/docker-mg/releases/tag/v3.2.1.1"
 
 ENV LANG=C.UTF-8
 
@@ -70,8 +71,8 @@ RUN \
 
 # Prepare image with users, groups, packages and other configs.
 RUN \
-    wget --no-check-certificate -O ${MGW_SERVER}.zip "${MGW_SERVER_DIST_URL}" \
-    && wget --no-check-certificate -O /tmp/openjdk.tar.gz "${JRE_BINARY_URL}" \
+    wget -O ${MGW_SERVER}.zip "${MGW_SERVER_DIST_URL}" \
+    && wget -O /tmp/openjdk.tar.gz "${JRE_BINARY_URL}" \
     && unzip -d ${USER_HOME} ${MGW_SERVER}.zip \
     && mkdir -p /home/ballerina/conf \
     && mv ${USER_HOME}/${MGW_SERVER} ${MGW_RUNTIME_HOME} \
