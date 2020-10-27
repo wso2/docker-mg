@@ -85,8 +85,8 @@ RUN \
     && echo '[ ! -z "${TERM}" -a -r /etc/motd ] && printf "$(cat /etc/motd)"' >> ${ENV}; echo "${MOTD}" > /etc/motd \
     && echo '[ ! -z "${TERM}" -a -r /etc/motd ] && printf "$(cat /etc/motd)"' >> ${USER_HOME}"/.bashrc" \
     && apk add --update --no-cache bash libxml2-utils netcat-openbsd \
-    && wget --no-check-certificate -O /root/${MGW_SERVER}.zip "${MGW_SERVER_DIST_URL}" \
-    && wget --no-check-certificate -O /tmp/openjdk.tar.gz "${JRE_BINARY_URL}" \
+    && wget -O /root/${MGW_SERVER}.zip "${MGW_SERVER_DIST_URL}" \
+    && wget -O /tmp/openjdk.tar.gz "${JRE_BINARY_URL}" \
     && unzip /root/${MGW_SERVER}.zip -d /home/${USER}/ >/dev/null 2>&1 \
     && mkdir -p /home/${USER}/conf \
     && mv /home/${USER}/${MGW_SERVER} ${MGW_RUNTIME_HOME} \

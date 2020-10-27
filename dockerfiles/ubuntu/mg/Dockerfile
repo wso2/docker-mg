@@ -70,8 +70,8 @@ RUN \
 
 # Prepare image with users, groups, packages and other configs.
 RUN \
-    wget --no-check-certificate -O ${MGW_SERVER}.zip "${MGW_SERVER_DIST_URL}" \
-    && wget --no-check-certificate -O /tmp/openjdk.tar.gz "${JRE_BINARY_URL}" \
+    wget -O ${MGW_SERVER}.zip "${MGW_SERVER_DIST_URL}" \
+    && wget -O /tmp/openjdk.tar.gz "${JRE_BINARY_URL}" \
     && unzip -d ${USER_HOME} ${MGW_SERVER}.zip \
     && mkdir -p /home/ballerina/conf \
     && mv ${USER_HOME}/${MGW_SERVER} ${MGW_RUNTIME_HOME} \
