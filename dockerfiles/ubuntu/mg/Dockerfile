@@ -16,7 +16,8 @@
 
 # set base Docker image to AdoptOpenJDK Ubuntu Docker image
 FROM ubuntu:20.04
-LABEL maintainer="dev@wso2.org"
+LABEL maintainer="WSO2 Docker Maintainers <dev@wso2.org>" \
+      com.wso2.docker.source="https://github.com/wso2/docker-mg/releases/tag/v3.2.1.1"
 
 ENV LANG=C.UTF-8
 
