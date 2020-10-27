@@ -16,7 +16,8 @@
 
 FROM alpine:3.11
 
-LABEL maintainer="dev@wso2.org"
+LABEL maintainer="WSO2 Docker Maintainers <dev@wso2.org>" \
+      com.wso2.docker.source="https://github.com/wso2/docker-mg/releases/tag/v3.2.1.1"
 
 ENV LANG=C.UTF-8
 
@@ -26,10 +27,13 @@ ARG USER_ID=802
 ARG USER_GROUP=ballerina
 ARG USER_GROUP_ID=802
 ARG USER_HOME=/home/${USER}
+ARG JRE_BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u265-b01/OpenJDK8U-jre_x64_linux_hotspot_8u265b01.tar.gz'
+ARG INTERNAL_JRE=jdk8u265-b01-jre
+ARG JRE_HOME=/opt/java/openjdk
 
 # build arguments for WSO2 product installation
 ARG MGW_SERVER_NAME=wso2am-micro-gw-linux
-ARG MGW_SERVER_VERSION=3.2.0
+ARG MGW_SERVER_VERSION=3.2.1
 ARG MGW_SERVER=${MGW_SERVER_NAME}-${MGW_SERVER_VERSION}
 ARG MGW_RUNTIME_HOME=${USER_HOME}/wso2
 ARG MGW_SERVER_DIST_URL=https://github.com/wso2/product-microgateway/releases/download/v${MGW_SERVER_VERSION}/${MGW_SERVER}.zip
@@ -82,20 +86,28 @@ RUN \
     && echo '[ ! -z "${TERM}" -a -r /etc/motd ] && printf "$(cat /etc/motd)"' >> ${ENV}; echo "${MOTD}" > /etc/motd \
     && echo '[ ! -z "${TERM}" -a -r /etc/motd ] && printf "$(cat /etc/motd)"' >> ${USER_HOME}"/.bashrc" \
     && apk add --update --no-cache bash libxml2-utils netcat-openbsd \
-    && wget --no-check-certificate -O /root/${MGW_SERVER}.zip "${MGW_SERVER_DIST_URL}" \
+    && wget -O /root/${MGW_SERVER}.zip "${MGW_SERVER_DIST_URL}" \
+    && wget -O /tmp/openjdk.tar.gz "${JRE_BINARY_URL}" \
     && unzip /root/${MGW_SERVER}.zip -d /home/${USER}/ >/dev/null 2>&1 \
     && mkdir -p /home/${USER}/conf \
     && mv /home/${USER}/${MGW_SERVER} ${MGW_RUNTIME_HOME} \
     && mv ${MGW_RUNTIME_HOME}/conf/micro-gw.conf ${USER_HOME}/conf/micro-gw.conf \
     && chown ${USER}:${USER_GROUP} -R ${USER_HOME}  \
     && rm /root/${MGW_SERVER}.zip > /dev/null 2>&1 \
-    && rm "/root/.wget-hsts"
+    && rm -rf ${MGW_RUNTIME_HOME}/lib/${INTERNAL_JRE} \
+    && rm -f "/root/.wget-hsts" \
+    && mkdir -p ${JRE_HOME} \
+    && cd ${JRE_HOME} \
+    && tar -xf /tmp/openjdk.tar.gz --strip-components=1 \
+    && rm -rf /tmp/openjdk.tar.gz
 
 ENV BALLERINA_HOME ${MGW_RUNTIME_HOME}/runtime
 ENV GW_HOME ${MGW_RUNTIME_HOME}
 ENV PATH $GW_HOME/bin:$PATH
 ENV MGW_CONF_DIR=${USER_HOME}/conf
 ENV JAVA_OPTS="${JAVA_OPTS}"
+ENV JAVA_HOME=/opt/java/openjdk
+ENV PATH="/opt/java/openjdk/bin:$PATH"
 
 WORKDIR ${USER_HOME}
 
