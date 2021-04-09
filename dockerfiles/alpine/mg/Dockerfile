@@ -55,13 +55,14 @@ RUN ALPINE_GLIBC_BASE_URL="https://github.com/sgerrand/alpine-pkg-glibc/releases
     ALPINE_GLIBC_BASE_PACKAGE_FILENAME="glibc-$ALPINE_GLIBC_PACKAGE_VERSION.apk" && \
     ALPINE_GLIBC_BIN_PACKAGE_FILENAME="glibc-bin-$ALPINE_GLIBC_PACKAGE_VERSION.apk" && \
     ALPINE_GLIBC_I18N_PACKAGE_FILENAME="glibc-i18n-$ALPINE_GLIBC_PACKAGE_VERSION.apk" && \
-    apk add --no-cache --virtual=.build-dependencies wget ca-certificates && \
+    apk upgrade && \
+    apk add --virtual=.build-dependencies wget ca-certificates && \
     wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub && \
     wget \
         "$ALPINE_GLIBC_BASE_URL/$ALPINE_GLIBC_PACKAGE_VERSION/$ALPINE_GLIBC_BASE_PACKAGE_FILENAME" \
         "$ALPINE_GLIBC_BASE_URL/$ALPINE_GLIBC_PACKAGE_VERSION/$ALPINE_GLIBC_BIN_PACKAGE_FILENAME" \
         "$ALPINE_GLIBC_BASE_URL/$ALPINE_GLIBC_PACKAGE_VERSION/$ALPINE_GLIBC_I18N_PACKAGE_FILENAME" && \
-    apk add --no-cache \
+    apk add \
         "$ALPINE_GLIBC_BASE_PACKAGE_FILENAME" \
         "$ALPINE_GLIBC_BIN_PACKAGE_FILENAME" \
         "$ALPINE_GLIBC_I18N_PACKAGE_FILENAME" && \
@@ -99,7 +100,8 @@ RUN \
     && mkdir -p ${JRE_HOME} \
     && cd ${JRE_HOME} \
     && tar -xf /tmp/openjdk.tar.gz --strip-components=1 \
-    && rm -rf /tmp/openjdk.tar.gz
+    && rm -rf /tmp/openjdk.tar.gz \
+    && rm -rf /var/cache/apk/*
 
 ENV BALLERINA_HOME ${MGW_RUNTIME_HOME}/runtime
 ENV GW_HOME ${MGW_RUNTIME_HOME}
