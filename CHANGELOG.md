@@ -4,6 +4,12 @@ All notable changes to Docker resources for WSO2 API Microgateway will be docume
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## [v3.2.1.2] - 2021-04-10
+
+### Changed
+
+- Upgrade base image packages during the build (refer to [issue](https://github.com/wso2/docker-mg/issues/9))
+
 ## [v3.2.1.1] - 2020-10-27
 
 ### Changed
@@ -31,3 +37,4 @@ For detailed information on the tasks carried out during this release, please se
 
 [v3.2.0]: https://github.com/wso2/docker-mg/compare/9405bc5...v3.2.0
 [v3.2.1.1]: https://github.com/wso2/docker-mg/compare/v3.2.0...v3.2.1.1
+[v3.2.1.2]: https://github.com/wso2/docker-mg/compare/v3.2.1.1...v3.2.1.2
