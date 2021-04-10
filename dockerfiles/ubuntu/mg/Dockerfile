@@ -56,6 +56,7 @@ RUN \
 # install required packages
 RUN \
     apt-get update \
+    && apt-get upgrade -y \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         tzdata \
         ca-certificates \
@@ -67,6 +68,8 @@ RUN \
         wget \
     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
     && locale-gen en_US.UTF-8 \
+    && apt-get clean -y \
+    && rm -rf /var/cache/apt/archives/ \
     && rm -rf /var/lib/apt/lists/*
 
 # Prepare image with users, groups, packages and other configs.
