@@ -17,7 +17,7 @@
 # set base Docker image to AdoptOpenJDK Ubuntu Docker image
 FROM ubuntu:20.04
 LABEL maintainer="WSO2 Docker Maintainers <dev@wso2.org>" \
-      com.wso2.docker.source="https://github.com/wso2/docker-mg/releases/tag/v3.2.1.1"
+      com.wso2.docker.source="https://github.com/wso2/docker-mg/releases/tag/v3.2.3.1"
 
 ENV LANG=C.UTF-8
 
@@ -34,7 +34,7 @@ ARG JRE_HOME=/opt/java/openjdk
 
 # build arguments for WSO2 product installation
 ARG MGW_SERVER_NAME=wso2am-micro-gw-linux
-ARG MGW_SERVER_VERSION=3.2.1
+ARG MGW_SERVER_VERSION=3.2.3
 ARG MGW_SERVER=${MGW_SERVER_NAME}-${MGW_SERVER_VERSION}
 ARG MGW_RUNTIME_HOME=${USER_HOME}/wso2
 ARG MGW_SERVER_DIST_URL=https://github.com/wso2/product-microgateway/releases/download/v${MGW_SERVER_VERSION}/${MGW_SERVER}.zip
