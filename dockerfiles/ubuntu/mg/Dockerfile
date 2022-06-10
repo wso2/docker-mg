@@ -28,7 +28,7 @@ ARG USER_ID=802
 ARG USER_GROUP=ballerina
 ARG USER_GROUP_ID=802
 ARG USER_HOME=/home/${USER}
-ARG JRE_BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u265-b01/OpenJDK8U-jre_x64_linux_hotspot_8u265b01.tar.gz'
+ARG JRE_BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u332-b09/OpenJDK8U-jre_x64_linux_hotspot_8u332b09.tar.gz'
 ARG INTERNAL_JRE=jdk8u265-b01-jre
 ARG JRE_HOME=/opt/java/openjdk
 
