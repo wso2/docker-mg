@@ -28,7 +28,7 @@ ARG USER_GROUP=ballerina
 ARG USER_GROUP_ID=802
 ARG USER_HOME=/home/${USER}
 ARG JRE_BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u332-b09/OpenJDK8U-jre_x64_linux_hotspot_8u332b09.tar.gz'
-ARG INTERNAL_JRE=jdk8u265-b01-jre
+ARG INTERNAL_JRE=jdk8u332-b09-jre
 ARG JRE_HOME=/opt/java/openjdk
 
 # build arguments for WSO2 product installation
@@ -57,6 +57,7 @@ RUN ALPINE_GLIBC_BASE_URL="https://github.com/sgerrand/alpine-pkg-glibc/releases
     ALPINE_GLIBC_I18N_PACKAGE_FILENAME="glibc-i18n-$ALPINE_GLIBC_PACKAGE_VERSION.apk" && \
     apk upgrade && \
     apk add --virtual=.build-dependencies wget ca-certificates && \
+    apk add unzip && \
     wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub && \
     wget \
         "$ALPINE_GLIBC_BASE_URL/$ALPINE_GLIBC_PACKAGE_VERSION/$ALPINE_GLIBC_BASE_PACKAGE_FILENAME" \
