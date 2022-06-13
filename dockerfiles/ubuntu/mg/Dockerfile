@@ -29,7 +29,7 @@ ARG USER_GROUP=ballerina
 ARG USER_GROUP_ID=802
 ARG USER_HOME=/home/${USER}
 ARG JRE_BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u332-b09/OpenJDK8U-jre_x64_linux_hotspot_8u332b09.tar.gz'
-ARG INTERNAL_JRE=jdk8u265-b01-jre
+ARG INTERNAL_JRE=jdk8u332-b09-jre
 ARG JRE_HOME=/opt/java/openjdk
 
 # build arguments for WSO2 product installation
