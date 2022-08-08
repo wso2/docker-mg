@@ -17,7 +17,7 @@
 # set base Docker image to AdoptOpenJDK Ubuntu Docker image
 FROM ubuntu:20.04
 LABEL maintainer="WSO2 Docker Maintainers <dev@wso2.org>" \
-      com.wso2.docker.source="https://github.com/wso2/docker-mg/releases/tag/v3.2.4.2"
+      com.wso2.docker.source="https://github.com/wso2/docker-mg/releases/tag/v3.2.5.1"
 
 ENV LANG=C.UTF-8
 
@@ -28,13 +28,13 @@ ARG USER_ID=802
 ARG USER_GROUP=ballerina
 ARG USER_GROUP_ID=802
 ARG USER_HOME=/home/${USER}
-ARG JRE_BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u332-b09/OpenJDK8U-jre_x64_linux_hotspot_8u332b09.tar.gz'
+ARG JRE_BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u345-b01/OpenJDK8U-jre_x64_linux_hotspot_8u345b01.tar.gz'
 ARG INTERNAL_JRE=jdk8u332-b09-jre
 ARG JRE_HOME=/opt/java/openjdk
 
 # build arguments for WSO2 product installation
 ARG MGW_SERVER_NAME=wso2am-micro-gw-linux
-ARG MGW_SERVER_VERSION=3.2.4
+ARG MGW_SERVER_VERSION=3.2.5
 ARG MGW_SERVER=${MGW_SERVER_NAME}-${MGW_SERVER_VERSION}
 ARG MGW_RUNTIME_HOME=${USER_HOME}/wso2
 ARG MGW_SERVER_DIST_URL=https://github.com/wso2/product-microgateway/releases/download/v${MGW_SERVER_VERSION}/${MGW_SERVER}.zip
