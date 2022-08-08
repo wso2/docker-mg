@@ -4,6 +4,13 @@ All notable changes to Docker resources for WSO2 API Microgateway will be docume
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## [v3.2.5.1] - 2022-08-08
+
+### Changed
+
+- Upgrade to API Microgateway 3.2.5 (refer to [issue](https://github.com/wso2/docker-mg/issues/27))
+- Upgrade Alpine Base Image and JRE to latest (refer to [issue](https://github.com/wso2/docker-mg/issues/28))
+
 ## [v3.2.4.2] - 2022-06-13
 
 ### Changed
@@ -52,3 +59,4 @@ For detailed information on the tasks carried out during this release, please se
 [v3.2.1.2]: https://github.com/wso2/docker-mg/compare/v3.2.1.1...v3.2.1.2
 [v3.2.3.1]: https://github.com/wso2/docker-mg/compare/v3.2.1.2...v3.2.3.1
 [v3.2.4.2]: https://github.com/wso2/docker-mg/compare/v3.2.3.1...v3.2.4.2
+[v3.2.5.1]: https://github.com/wso2/docker-mg/compare/v3.2.4.2...v3.2.5.1
