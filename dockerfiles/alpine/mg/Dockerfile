@@ -14,10 +14,10 @@
 # limitations under the License.
 # -----------------------------------------------------------------------
 
-FROM alpine:3.16.1
+FROM alpine:3.18.4
 
 LABEL maintainer="WSO2 Docker Maintainers <dev@wso2.org>" \
-      com.wso2.docker.source="https://github.com/wso2/docker-mg/releases/tag/v3.2.8.1"
+      com.wso2.docker.source="https://github.com/wso2/docker-mg/releases/tag/v3.2.8.2"
 
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 
@@ -61,7 +61,7 @@ RUN apk add --no-cache tzdata --virtual .build-deps curl binutils zstd \
     && SGERRAND_RSA_SHA256="823b54589c93b02497f1ba4dc622eaef9c813e6b0f0ebbb2f771e32adf9f4ef2" \
     && echo "${SGERRAND_RSA_SHA256} */etc/apk/keys/sgerrand.rsa.pub" | sha256sum -c - \
     && curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/glibc-${GLIBC_VER}.apk \
-    && apk add --no-cache /tmp/glibc-${GLIBC_VER}.apk \
+    && apk add --force-overwrite --no-cache /tmp/glibc-${GLIBC_VER}.apk \
     && apk add unzip \
     && curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk > /tmp/glibc-bin-${GLIBC_VER}.apk \
     && apk add --no-cache /tmp/glibc-bin-${GLIBC_VER}.apk \
@@ -108,6 +108,9 @@ RUN \
     && tar -xf /tmp/openjdk.tar.gz --strip-components=1 \
     && rm -rf /tmp/openjdk.tar.gz \
     && rm -rf /var/cache/apk/*
+
+# Remove unnecesary packages
+RUN apk del unzip
 
 ENV BALLERINA_HOME ${MGW_RUNTIME_HOME}/runtime
 ENV GW_HOME ${MGW_RUNTIME_HOME}
