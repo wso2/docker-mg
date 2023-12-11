@@ -17,7 +17,7 @@
 # set base Docker image to AdoptOpenJDK Ubuntu Docker image
 FROM ubuntu:22.04
 LABEL maintainer="WSO2 Docker Maintainers <dev@wso2.org>" \
-      com.wso2.docker.source="https://github.com/wso2/docker-mg/releases/tag/v3.2.8.1"
+      com.wso2.docker.source="https://github.com/wso2/docker-mg/releases/tag/v3.2.8.2"
 
 ENV LANG=C.UTF-8
 
@@ -88,6 +88,9 @@ RUN \
     && cd ${JRE_HOME} \
     && tar -xf /tmp/openjdk.tar.gz --strip-components=1 \
     && rm -rf /tmp/openjdk.tar.gz
+
+# Remove unnecesary packages
+RUN apt-get purge -y unzip
 
 ENV BALLERINA_HOME ${MGW_RUNTIME_HOME}/runtime
 ENV GW_HOME ${MGW_RUNTIME_HOME}
