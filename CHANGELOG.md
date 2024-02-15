@@ -4,6 +4,11 @@ All notable changes to Docker resources for WSO2 API Microgateway will be docume
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## [v3.2.9.1] - 2024-01-10
+
+### Changed
+- Upgrade to API Microgateway 3.2.9 (refer to [issue](https://github.com/wso2/docker-mg/issues/46))
+
 ## [v3.2.8.2] - 2023-12-08
 
 ### Changed
