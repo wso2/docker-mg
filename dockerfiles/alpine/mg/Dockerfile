@@ -14,10 +14,10 @@
 # limitations under the License.
 # -----------------------------------------------------------------------
 
-FROM alpine:3.18.4
+FROM alpine:3.19.1
 
 LABEL maintainer="WSO2 Docker Maintainers <dev@wso2.org>" \
-      com.wso2.docker.source="https://github.com/wso2/docker-mg/releases/tag/v3.2.9.1"
+      com.wso2.docker.source="https://github.com/wso2/docker-mg/releases/tag/v3.2.9.2"
 
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 
