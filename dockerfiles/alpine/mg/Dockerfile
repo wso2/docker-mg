@@ -17,7 +17,7 @@
 FROM alpine:3.19.1
 
 LABEL maintainer="WSO2 Docker Maintainers <dev@wso2.org>" \
-      com.wso2.docker.source="https://github.com/wso2/docker-mg/releases/tag/v3.2.9.2"
+      com.wso2.docker.source="https://github.com/wso2/docker-mg/releases/tag/v3.2.9.3"
 
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 
@@ -27,7 +27,7 @@ ARG USER_ID=802
 ARG USER_GROUP=ballerina
 ARG USER_GROUP_ID=802
 ARG USER_HOME=/home/${USER}
-ARG JRE_BINARY_URL='https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u382-b05/OpenJDK8U-jre_x64_linux_hotspot_8u382b05.tar.gz'
+ARG JRE_BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.11%2B9/OpenJDK17U-jdk_x64_linux_hotspot_17.0.11_9.tar.gz'
 ARG INTERNAL_JRE=jdk8u382-b05-jre
 ARG JRE_HOME=/opt/java/openjdk
 
