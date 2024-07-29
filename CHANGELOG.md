@@ -4,6 +4,11 @@ All notable changes to Docker resources for WSO2 API Microgateway will be docume
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## [v3.2.9.3] - 2024-07-29
+
+### Changed
+- Upgrade JDK version to 17 (refer to [issue](https://github.com/wso2/docker-mg/issues/53))
+
 ## [v3.2.9.2] - 2024-02-15
 
 ### Changed
@@ -92,3 +97,4 @@ For detailed information on the tasks carried out during this release, please se
 [v3.2.7.1]: https://github.com/wso2/docker-mg/compare/v3.2.6.1...v3.2.7.1
 [v3.2.8.1]: https://github.com/wso2/docker-mg/compare/v3.2.7.1...v3.2.8.1
 [v3.2.8.2]: https://github.com/wso2/docker-mg/compare/v3.2.8.1...v3.2.8.2
+[v3.2.9.3]: https://github.com/wso2/docker-mg/compare/v3.2.9.2...v3.2.9.3

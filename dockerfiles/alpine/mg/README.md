@@ -11,7 +11,7 @@ This section defines the step-by-step instructions to build an [Alpine](https://
 1. Navigate to `/dockerfiles/alpine/mg` directory.
 2. Build the Docker image using the following command.
 
-```docker build --no-cache=true -t wso2/wso2micro-gw:3.2.8 .```
+```docker build --no-cache=true -t wso2/wso2micro-gw:3.2.9.3 .```
    
 > By default, the Docker image will prepackage the General Availability (GA) release version of the relevant WSO2 product.
 
