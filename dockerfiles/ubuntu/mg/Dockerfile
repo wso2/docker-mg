@@ -15,9 +15,9 @@
 # -----------------------------------------------------------------------
 
 # set base Docker image to AdoptOpenJDK Ubuntu Docker image
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 LABEL maintainer="WSO2 Docker Maintainers <dev@wso2.org>" \
-      com.wso2.docker.source="https://github.com/wso2/docker-mg/releases/tag/v3.2.9.3"
+      com.wso2.docker.source="https://github.com/wso2/docker-mg/releases/tag/v3.2.9.4"
 
 ENV LANG=C.UTF-8
 
@@ -63,7 +63,7 @@ RUN \
         fontconfig \
         locales \
         libxml2-utils \
-        netcat \
+        netcat-traditional \
         unzip \
         wget \
     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
