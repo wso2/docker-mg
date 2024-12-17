@@ -118,4 +118,4 @@ For detailed information on the tasks carried out during this release, please se
 [v3.2.8.2]: https://github.com/wso2/docker-mg/compare/v3.2.8.1...v3.2.8.2
 [v3.2.9.3]: https://github.com/wso2/docker-mg/compare/v3.2.9.2...v3.2.9.3
 [v3.2.9.4]: https://github.com/wso2/docker-mg/compare/v3.2.9.3...v3.2.9.4
-[v3.2.9.4]: https://github.com/wso2/docker-mg/compare/v3.2.9.4...v3.2.10.1
+[v3.2.10.1]: https://github.com/wso2/docker-mg/compare/v3.2.9.4...v3.2.10.1
