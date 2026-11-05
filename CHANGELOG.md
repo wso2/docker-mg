@@ -4,6 +4,11 @@ All notable changes to Docker resources for WSO2 API Microgateway will be docume
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## [Unreleased]
+
+### Changed
+- Upgrade JDK to Temurin 17.0.21+9 to remove the compromised eMudhra (emSign ECC Root CA - G3) and AAA Certificate Services roots from the JRE trust store
+
 ## [v3.2.10.1] - 2024-12-17
 
 ### Changed
