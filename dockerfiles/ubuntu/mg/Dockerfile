@@ -28,7 +28,7 @@ ARG USER_ID=802
 ARG USER_GROUP=ballerina
 ARG USER_GROUP_ID=802
 ARG USER_HOME=/home/${USER}
-ARG JRE_BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.11%2B9/OpenJDK17U-jdk_x64_linux_hotspot_17.0.11_9.tar.gz'
+ARG JRE_BINARY_URL='https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.21%2B9/OpenJDK17U-jdk_x64_linux_hotspot_17.0.21_9.tar.gz'
 ARG INTERNAL_JRE=jdk8u382-b05-jre
 ARG JRE_HOME=/opt/java/openjdk
 
