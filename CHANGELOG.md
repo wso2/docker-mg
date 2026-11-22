@@ -4,6 +4,11 @@ All notable changes to Docker resources for WSO2 API Microgateway will be docume
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## [Unreleased]
+
+### Changed
+- Upgrade JDK to Temurin 17.0.21.1+2
+
 ## [v3.2.11.1] - 2026-11-13
 
 ### Changed
